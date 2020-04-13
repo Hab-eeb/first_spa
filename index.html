@@ -124,7 +124,7 @@ button,select {
 							<option>weeks</option>
 							<option>months</option>
 						</select>
-						<!--<div class="dropDownSelect2"></div>-->
+						<div class="dropDownSelect2"></div>
 					</div>
 				</div>
 
@@ -141,24 +141,9 @@ button,select {
 			</form>
 		</div>
 	</div>
-<script>
-	 var some = {
-    population: document.getElementById('pop').value,
-    timeToElapse: document.getElementById('timeToElap').value,
-    reportedCases: document.getElementById('repCase').value,
-    totalHospitalBeds: document.getElementById('hospBed').value,
-    periodType: document.getElementById('s-select').value
-    };
-	 
-	 var cret = covid19ImpactEstimator(some).impact.currentlyInfected;
-	  function cres() {
-		  let cet = some.population;
-		  return cet;
-	  }
-	
-</script>
+
 <!--===============================================================================================-->
-	<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
+	<script src="vendor/jquery/jquery-3.5.0.min.js"></script>
 <!--===============================================================================================-->
 	<script src="vendor/animsition/js/animsition.min.js"></script>
 <!--===============================================================================================-->
@@ -193,8 +178,8 @@ button,select {
 <!--===============================================================================================-->
 	<script src="vendor/countdowntime/countdowntime.js"></script>
 <!--===============================================================================================-->
-	<script src="vendor/noui/nouislider.min.js"></script>
-<!-- 	<script>
+	<!--<script src="vendor/noui/nouislider.min.js"></script>
+	<script>
 	    var filterBar = document.getElementById('filter-bar');
 
 	    noUiSlider.create(filterBar, {
@@ -297,6 +282,22 @@ button,select {
 
 //export default covid19ImpactEstimator;
 
+</script>
+<script>
+	 var some = {
+    population: document.getElementById('pop').value,
+    timeToElapse: document.getElementById('timeToElap').value,
+    reportedCases: document.getElementById('repCase').value,
+    totalHospitalBeds: document.getElementById('hospBed').value,
+    periodType: document.getElementById('s-select').value
+    };
+	 
+	 var cret = covid19ImpactEstimator(some).impact.currentlyInfected;
+	  function cres() {
+		  let cet = some.population;
+		  return cet;
+	  }
+	
 </script>
 
 </body>
