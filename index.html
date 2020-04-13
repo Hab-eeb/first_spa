@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Contact V5</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->
+	<link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="fonts/iconic/css/material-design-iconic-font.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/css-hamburgers/hamburgers.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/animsition/css/animsition.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/daterangepicker/daterangepicker.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/noui/nouislider.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="css/util.css">
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+<!--===============================================================================================-->
+</head>
+<body>
+
+
+	<div class="container-contact100">
+		<div class="wrap-contact100">
+			<form class="contact100-form validate-form" id="nForm">
+				<span class="contact100-form-title">
+					Enter the data as it pertains to your Region
+				</span>
+
+				
+				<div class="wrap-input100 validate-input bg1 rs1-wrap-input100" data-validate = "Enter your population">
+					<span class="label-input100">Population *</span>
+					<input class="input100" type="text" id="pop" name="population" placeholder="Enter Your Population " data-population="" >
+				</div>
+
+				<div class="wrap-input100 validate-input bg1 rs1-wrap-input100" data-validate = "Enter Your Time to Elapse" data-time-to-elapse="">
+					<span class="label-input100">Time To Elapse *</span>
+					<input class="input100" type="text" id="timeToElap" name="timeToElapse" placeholder="Enter Your Time to Elapse ">
+				</div>
+
+				<div class="wrap-input100 validate-input bg1 rs1-wrap-input100" data-validate = "Enter your reported cases" data-reported-cases="">
+					<span class="label-input100">Reported Cases *</span>
+					<input class="input100" type="text" id="repCase" name="reportedCases" placeholder="Enter Your no* of reported Cases ">
+				</div>
+
+				<div class="wrap-input100 validate-input bg1 rs1-wrap-input100" data-validate = "Enter Your total amount of Hospital Beds" data-total-hospital-beds="">
+					<span class="label-input100">Hospital Beds *</span>
+					<input class="input100" type="text" id="hospBed" name="HospitalBeds" placeholder="Enter total amount of Hospital Beds ">
+				</div>
+
+				
+
+				<div class="wrap-input100  input100-select bg1" >
+					<span class="label-input100">Time Period *</span>
+					<div>
+						<select class="js-select2 " id="s-select" name="service" data-period-type="" >
+							<option>Please select a suitable time period</option>
+							<option>days</option>
+							<option>weeks</option>
+							<option>months</option>
+						</select>
+						<div class="dropDownSelect2"></div>
+					</div>
+				</div>
+
+				
+
+				<div class="container-contact100-form-btn">
+					<button class="contact100-form-btn" id="subit" data-go-estimate="">
+						<span>
+							Submit
+							<i class="fa fa-long-arrow-right m-l-7" aria-hidden="true"></i>
+						</span>
+					</button>
+				</div>
+			</form>
+		</div>
+	</div>
+<script>
+	 var some = {
+    population: document.getElementById('pop').value,
+    timeToElapse: document.getElementById('timeToElap').value,
+    reportedCases: document.getElementById('repCase').value,
+    totalHospitalBeds: document.getElementById('hospBed').value,
+    periodType: document.getElementById('s-select').value
+    };
+	 
+	 var cret = covid19ImpactEstimator(some).impact.currentlyInfected;
+	  function cres() {
+		  let cet = some.population;
+		  return cet;
+	  }
+	
+</script>
+<!--===============================================================================================-->
+	<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/animsition/js/animsition.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/bootstrap/js/popper.js"></script>
+	<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/select2/select2.min.js"></script>
+	<script>
+		$(".js-select2").each(function(){
+			$(this).select2({
+				minimumResultsForSearch: 20,
+				dropdownParent: $(this).next('.dropDownSelect2')
+			});
+
+
+			$(".js-select2").each(function(){
+				$(this).on('select2:close', function (e){
+					if($(this).val() == "Please chooses") {
+						$('.js-show-service').slideUp();
+					}
+					else {
+						$('.js-show-service').slideUp();
+						$('.js-show-service').slideDown();
+					}
+				});
+			});
+		})
+	</script>
+<!--===============================================================================================-->
+	<script src="vendor/daterangepicker/moment.min.js"></script>
+	<script src="vendor/daterangepicker/daterangepicker.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/countdowntime/countdowntime.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/noui/nouislider.min.js"></script>
+	<script>
+	    var filterBar = document.getElementById('filter-bar');
+
+	    noUiSlider.create(filterBar, {
+	        start: [ 1500, 3900 ],
+	        connect: true,
+	        range: {
+	            'min': 1500,
+	            'max': 7500
+	        }
+	    });
+
+	    var skipValues = [
+	    document.getElementById('value-lower'),
+	    document.getElementById('value-upper')
+	    ];
+
+	    filterBar.noUiSlider.on('update', function( values, handle ) {
+	        skipValues[handle].innerHTML = Math.round(values[handle]);
+	        $('.contact100-form-range-value input[name="from-value"]').val($('#value-lower').html());
+	        $('.contact100-form-range-value input[name="to-value"]').val($('#value-upper').html());
+	    });
+	</script>
+<!--===============================================================================================-->
+	<script src="js/main.js"></script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-23581568-13');
+</script>
+<script>
+	const covid19ImpactEstimator = (data) => {
+  const input = data;
+  const Week = 'weeks';
+  const Months = 'months';
+  let currentlyInfectedI = 0;
+  let infecByTimeI = 0;
+  let currentlyInfectedS = 0;
+  let infecByTimeS = 0;
+  const totalBedSpace = input.totalHospitalBeds;
+  const perType = input.periodType;
+  const day = input.timeToElapse;
+  const DIncome = input.region.avgDailyIncomeInUSD;
+  const DIncPop = input.region.avgDailyIncomePopulation;
+  let days = 0;
+  currentlyInfectedI = input.reportedCases * 10;
+  currentlyInfectedS = input.reportedCases * 50;
+
+  if (perType === Months) {
+    days = 30 * day;
+  } else if (perType === Week) {
+    days = 7 * day;
+  } else {
+    days = day;
+  }
+  const dayz = Math.trunc(days);
+  const dayx = dayz / 3;
+  const dayzs = Math.trunc(dayx);
+  infecByTimeI = Math.trunc(currentlyInfectedI * (2 ** dayzs));
+  infecByTimeS = Math.trunc(currentlyInfectedS * (2 ** dayzs));
+  const casesI = 0.15 * infecByTimeI;
+  const casesS = 0.15 * infecByTimeS;
+  const availBed = 0.35 * totalBedSpace;
+  const availBedTimeI = Math.trunc(availBed - casesI);
+  const availBedTimeS = Math.trunc(availBed - casesS);
+  const icuCasesI = Math.trunc(0.05 * infecByTimeI);
+  const icuCasesS = Math.trunc(0.05 * infecByTimeS);
+  const ventCasesI = Math.trunc(0.02 * infecByTimeI);
+  const ventCasesS = Math.trunc(0.02 * infecByTimeS);
+  const majorityI = DIncPop * infecByTimeI;
+  const majorityS = DIncPop * infecByTimeS;
+  const dollInFligI = Math.trunc((majorityI * DIncome) / dayz);
+  const dollInFligS = Math.trunc((majorityS * DIncome) / dayz);
+  return {
+    data: input,
+    impact: {
+      severeCasesByRequestedTime: casesI,
+      currentlyInfected: currentlyInfectedI,
+      infectionsByRequestedTime: infecByTimeI,
+      hospitalBedsByRequestedTime: availBedTimeI,
+      casesForICUByRequestedTime: icuCasesI,
+      casesForVentilatorsByRequestedTime: ventCasesI,
+      dollarsInFlight: dollInFligI
+    },
+    severeImpact: {
+      severeCasesByRequestedTime: casesS,
+      currentlyInfected: currentlyInfectedS,
+      infectionsByRequestedTime: infecByTimeS,
+      hospitalBedsByRequestedTime: availBedTimeS,
+      casesForICUByRequestedTime: icuCasesS,
+      casesForVentilatorsByRequestedTime: ventCasesS,
+      dollarsInFlight: dollInFligS
+    }
+  };
+};
+
+//export default covid19ImpactEstimator;
+
+</script>
+
+</body>
+</html>
