@@ -406,6 +406,7 @@ textarea.input100 {
   height: 40px;
   top: 35px;
   right: 12px;
+  font-display: swap;
 }
 
 .rs1-alert-validate.alert-validate::before {
@@ -429,6 +430,7 @@ textarea.input100 {
   height: 40px;
   top: 35px;
   right: 10px;
+  font-display: swap;
 }
 
 /*---------------------------------------------*/
@@ -502,6 +504,7 @@ textarea.input100 {
   font-family: Material-Design-Iconic-Font;
   font-size: 18px;
   color: #555555;
+  font-display: swap;
 }
 
 
