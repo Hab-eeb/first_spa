@@ -349,11 +349,11 @@ input.input100 {
 <!--===============================================================================================-->
 	<link rel="preload" type="text/css" href="fonts/iconic/css/material-design-iconic-font.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
 <!--===============================================================================================-->
-	<link rel="preload" type="text/css" href="vendor/animate/animate.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+	<!--<link rel="preload" type="text/css" href="vendor/animate/animate.css" as="style" onload="this.onload=null;this.rel='stylesheet'">-->
 <!--===============================================================================================-->
 	<!--<link rel="preload" type="text/css" href="vendor/css-hamburgers/hamburgers.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">-->
 <!--===============================================================================================-->
-	<link rel="preload" type="text/css" href="vendor/animsition/css/animsition.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+	<!--<link rel="preload" type="text/css" href="vendor/animsition/css/animsition.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">-->
 <!--===============================================================================================-->
 	<link rel="preload" type="text/css" href="vendor/select2/select2.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
 <!--===============================================================================================-->
@@ -361,7 +361,7 @@ input.input100 {
 <!--===============================================================================================-->
 	<!--<link rel="preload" type="text/css" href="vendor/noui/nouislider.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">-->
 <!--===============================================================================================-->
-	<link rel="preload" href="css/util.css" type="text/css" as="style" onload="this.onload=null;this.rel='stylesheet'" >
+	<!--<link rel="preload" href="css/util.css" type="text/css" as="style" onload="this.onload=null;this.rel='stylesheet'" >-->
 	<link rel="preload" type="text/css" href="css/main.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
 <!--===============================================================================================-->
 </head>
@@ -378,31 +378,31 @@ input.input100 {
 				
 				<div class="wrap-input100 validate-input bg1 rs1-wrap-input100" data-validate = "Enter your population">
 					<span class="label-input100"><label for="pop">Population *</label></span>
-					<input class="input100" type="text" id="pop" name="population" placeholder="Enter Your Population " data-population="" >
+					<input class="input100" type="text" id="pop" name="population" placeholder="Enter Your Population " data-population="" required >
 				</div>
 
-				<div class="wrap-input100 validate-input bg1 rs1-wrap-input100" data-validate = "Enter Your Time to Elapse" data-time-to-elapse="">
+				<div class="wrap-input100 validate-input bg1 rs1-wrap-input100" data-validate = "Enter Your Time to Elapse" >
 					<span class="label-input100"> <label for="timeToElap">Time To Elapse *</label> </span>
-					<input class="input100" type="text" id="timeToElap" name="timeToElapse" placeholder="Enter Your Time to Elapse ">
+					<input class="input100" type="text" id="timeToElap" name="timeToElapse" placeholder="Enter Your Time to Elapse " data-time-to-elapse="" required>
 				</div>
 
-				<div class="wrap-input100 validate-input bg1 rs1-wrap-input100" data-validate = "Enter your reported cases" data-reported-cases="">
+				<div class="wrap-input100 validate-input bg1 rs1-wrap-input100" data-validate = "Enter your reported cases" >
 					<span class="label-input100"> <label for="repCase">Reported Cases *</label> Reported Cases *</span>
-					<input class="input100" type="text" id="repCase" name="reportedCases" placeholder="Enter Your no* of reported Cases ">
+					<input class="input100" type="text" id="repCase" name="reportedCases" placeholder="Enter Your no* of reported Cases " data-reported-cases="" required>
 				</div>
 
-				<div class="wrap-input100 validate-input bg1 rs1-wrap-input100" data-validate = "Enter Your total amount of Hospital Beds" data-total-hospital-beds="">
+				<div class="wrap-input100 validate-input bg1 rs1-wrap-input100" data-validate = "Enter Your total amount of Hospital Beds" >
 					<span class="label-input100"> <label for="hospBed">Hospital Beds *</label> </span>
-					<input class="input100" type="text" id="hospBed" name="HospitalBeds" placeholder="Enter total amount of Hospital Beds ">
+					<input class="input100" type="text" id="hospBed" name="HospitalBeds" placeholder="Enter total amount of Hospital Beds " data-total-hospital-beds="" required>
 				</div>
 
 				
 
 				<div class="wrap-input100  input100-select bg1" >
-					<span class="label-input100">Time Period *</span>
+					<span class="label-input100">Please select the applicable time period *</span>
 					<div>
-						<select class="js-select2 " id="s-select" name="service" data-period-type="" >
-							<option>Please select a suitable time period</option>
+						<select class="js-select2 " id="s-select" name="service" data-period-type="" required >
+							<!-- <option>Please select a suitable time period</option> -->
 							<option>days</option>
 							<option>weeks</option>
 							<option>months</option>
